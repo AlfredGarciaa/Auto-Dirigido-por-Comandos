@@ -1,3 +1,5 @@
+const formato = /^(\d*)(\,)(\d*)(\/)(\d*)(\,)(\d*)([a-zA-Z])(\/)([a-zA-z]\D*)$/
+
 function controladorDeAuto(cadena) {
 
   if (cadena) {
@@ -13,7 +15,7 @@ function controladorDeAuto(cadena) {
 
 function validarCadena(cadena){
   
-  let arregloDeCoincidencia = cadena.match(/^(\d*)(\,)(\d*)(\/)(\d*)(\,)(\d*)([a-zA-Z])(\/)([a-zA-z]\D*)$/);
+  let arregloDeCoincidencia = cadena.match(formato);
   if(arregloDeCoincidencia){
     return true;
   }
