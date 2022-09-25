@@ -5,7 +5,13 @@ function controladorDeAuto(cadena) {
 
 function validarCadena(cadena){
   
-  return true;
+  let arregloDeCoincidencia = cadena.match(/^(\d*)(\,)(\d*)(\/)(\d*)(\,)(\d*)([a-zA-Z])(\/)([a-zA-z]\D*)$/);
+  if(arregloDeCoincidencia){
+    return true;
+  }
+  else{
+    return false;
+  }
 }
 
 export {controladorDeAuto, validarCadena};
