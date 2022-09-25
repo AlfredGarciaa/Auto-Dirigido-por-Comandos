@@ -1,4 +1,4 @@
-import {controladorDeAuto, validarCadena, devolverDimension, devolvePosicionInicial} from "./controlador_auto.js";
+import {controladorDeAuto, validarCadena, devolverDimension, devolvePosicionInicial, devolverOrientacion} from "./controlador_auto.js";
 
 describe("CONTROLADOR DE AUTO", () => {
   it("deberia devolver 'ingresa una cadena'", () => {
@@ -39,12 +39,17 @@ describe("DEVOLVER DIMENSION", () => {
   });
 });
 
-
 describe("DEVOLVER POSICION INICIAL", () => {
   it("deberia devolver la posicion inicial de la cadena '0,0/0,0a/aaa'", () => {
     expect(devolvePosicionInicial('0,0/0,0a/aaa')).toEqual([0, 0]);
   });
   it("deberia devolver la posicion inicial de cualquier cadena", () => {
     expect(devolvePosicionInicial('100,17/17,1a/aaa')).toEqual([17, 1]);
+  });
+});
+
+describe("DEVOLVER ORIENTACION", () => {
+  it("deberia devolver la orientacion de la cadena '0,0/0,0a/aaa'", () => {
+      expect(devolverOrientacion('0,0/0,0a/aaa')).toEqual('a');
   });
 });

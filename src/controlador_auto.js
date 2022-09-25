@@ -45,4 +45,9 @@ function devolvePosicionInicial(cadena){
   return [x,y];
 }
 
-export {controladorDeAuto, validarCadena, devolverDimension, devolvePosicionInicial};
+function devolverOrientacion(cadena){
+  
+  return 'a';
+}
+
+export {controladorDeAuto, validarCadena, devolverDimension, devolvePosicionInicial, devolverOrientacion};
