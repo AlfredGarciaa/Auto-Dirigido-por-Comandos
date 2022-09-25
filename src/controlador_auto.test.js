@@ -1,4 +1,4 @@
-import {controladorDeAuto, validarCadena} from "./controlador_auto.js";
+import {controladorDeAuto, validarCadena, devolverDimension} from "./controlador_auto.js";
 
 describe("CONTROLADOR DE AUTO", () => {
   it("deberia devolver 'ingresa una cadena'", () => {
@@ -19,13 +19,19 @@ describe("VALIDAR UNA CADENA", () => {
   it("deberia devolver false para la cadena '0,0/0,0a/aaa'", () => {
     expect(validarCadena('0,0/0,0aaaa')).toEqual(false);
   });
-  it("deberia devovler false si no se le envia una dimension'", () => {
+  it("deberia devolver false si no se le envia una dimension'", () => {
     expect(validarCadena('/0,0a/aaa')).toEqual(false);
   });
-  it("deberia devovler false si no se le envia una posicion inicial", () => {
+  it("deberia devolver false si no se le envia una posicion inicial", () => {
     expect(validarCadena('0,0//aaa')).toEqual(false);
   });
-  it("deberia devovler false si no se le envia una serie de instrucciones", () => {
+  it("deberia devolver false si no se le envia una serie de instrucciones", () => {
     expect(validarCadena('0,0/0,0a/')).toEqual(false);
+  });
+});
+
+describe("DEVOLVER DIMENSION", () => {
+  it("deberia devolver la dimension de la cadena '0,0/0,0a/aaa'", () => {
+      expect(devolverDimension('0,0/0,0a/aaa')).toEqual([0, 0]);
   });
 });
