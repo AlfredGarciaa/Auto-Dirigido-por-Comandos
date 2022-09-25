@@ -1,0 +1,21 @@
+Como...Quiero.. Para… Criterios de confirmación
+
+1)  Como Usuario.
+    Quiero poder enviar una orden.
+    Para mover el auto.
+
+2)  Como desarrollador.
+    Quiero poder enviarle un mapa.
+    Para que el auto sepa como y donde moverse.
+
+3)  Como desarrollador.
+    Quiero poder darle su ubicacion y direccion.
+    Para que al moverse, sepa que primer paso hacer.
+
+4)  Como usuario.
+    Quiero poder enviar una serie de ordenes.
+    Para mover el auto varias veces.
+
+5)  Como usuario.
+    Quiero poder enviar un mapa, una posicion inicial, y una serie de movimientos.
+    Para que tras moverse el auto, me envie su posicion final. 
