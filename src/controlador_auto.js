@@ -1,6 +1,11 @@
 function controladorDeAuto(cadena) {
-  
+
   return 'Ingrese una cadena';
 }
 
-export default controladorDeAuto;
+function validarCadena(cadena){
+  
+  return true;
+}
+
+export {controladorDeAuto, validarCadena};
