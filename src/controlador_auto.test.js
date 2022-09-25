@@ -7,6 +7,9 @@ describe("CONTROLADOR DE AUTO", () => {
   it("deberia devolver 'error entrada'", () => {
     expect(controladorDeAuto('0,0/0,0aaaa')).toEqual('Error entrada.');
   });
+  it("deberia devolver 'Posicion inicial: 0,0\nComandos: i\nPosicion final: 0,0 n'", () => {
+    expect(controladorDeAuto('0,0/0,0n/i')).toEqual('Posicion inicial: 0,0\nComandos: i\nPosicion final: 0,0 n');
+  });
 });
 
 describe("VALIDAR UNA CADENA", () => {

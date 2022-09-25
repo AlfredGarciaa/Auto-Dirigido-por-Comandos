@@ -2,29 +2,35 @@ const formato = /^(\d*)(\,)(\d*)(\/)(\d*)(\,)(\d*)([a-zA-Z])(\/)([a-zA-z]\D*)$/
 
 function controladorDeAuto(cadena) {
 
+  let salida;
   if (cadena) {
     let esValidoLaCadena = validarCadena(cadena);
-    if(!esValidoLaCadena){
-      return 'Error entrada.';
+    if(esValidoLaCadena) {
+        let posicion = devolvePosicionInicial(cadena)
+        let orientacion = devolverOrientacion(cadena);
+        let instrucciones = devolverInstrucciones(cadena)
+        salida = 'Posicion inicial: ' + posicion + '\nComandos: ' + instrucciones + '\nPosicion final: ' + posicion + " " + orientacion;
+    }else {
+      salida = 'Error entrada.';
     }
+  }else { 
+    salida = 'Ingrese una cadena.';
   }
-  else{
-    return 'Ingrese una cadena.';
-  }
+  return salida;
 }
 
-function validarCadena(cadena){
+function validarCadena(cadena) {
   
   let arregloDeCoincidencia = devolverArregloDeCoincidencias(cadena);
-  if(arregloDeCoincidencia){
+  if(arregloDeCoincidencia) {
     return true;
   }
-  else{
+  else {
     return false;
   }
 }
 
-function devolverDimension(cadena){
+function devolverDimension(cadena) {
 
   let arregloDeCoincidencia = devolverArregloDeCoincidencias(cadena);
   let x = parseInt(arregloDeCoincidencia[1]);
@@ -32,12 +38,12 @@ function devolverDimension(cadena){
   return [x, y];
 }
 
-function devolverArregloDeCoincidencias(cadena){
+function devolverArregloDeCoincidencias(cadena) {
 
   return cadena.match(formato)
 }
 
-function devolvePosicionInicial(cadena){
+function devolvePosicionInicial(cadena) {
 
   let arregloDeCoincidencia = devolverArregloDeCoincidencias(cadena);
   let x = parseInt(arregloDeCoincidencia[5]);
@@ -45,14 +51,14 @@ function devolvePosicionInicial(cadena){
   return [x,y];
 }
 
-function devolverOrientacion(cadena){
+function devolverOrientacion(cadena) {
 
   let arregloDeCoincidencia = devolverArregloDeCoincidencias(cadena, formato);
   let orientacion = arregloDeCoincidencia[8];
   return orientacion;
 }
 
-function devolverInstrucciones(cadena){
+function devolverInstrucciones(cadena) {
 
   let arregloDeCoincidencia = devolverArregloDeCoincidencias(cadena, formato);
   let orientacion = arregloDeCoincidencia[10];
