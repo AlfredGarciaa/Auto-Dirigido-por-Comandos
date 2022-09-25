@@ -52,4 +52,7 @@ describe("DEVOLVER ORIENTACION", () => {
   it("deberia devolver la orientacion de la cadena '0,0/0,0a/aaa'", () => {
       expect(devolverOrientacion('0,0/0,0a/aaa')).toEqual('a');
   });
+  it("deberia devolver la orientacion de cualquier cadena", () => {
+    expect(devolverOrientacion('100,17/0,0z/aaa')).toEqual('z');
+  });
 });
