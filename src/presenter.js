@@ -1,4 +1,4 @@
-import sumar from "./sumador";
+import sumar from "./controlador_auto";
 
 const first = document.querySelector("#primer-numero");
 const second = document.querySelector("#segundo-numero");
