@@ -87,4 +87,7 @@ describe("EJECUTAR COMANDOS", () => {
   it("deberia ejecutar una instruccion 'd' con cualquier orientacion", () => {
     expect(ejecutarComandos([0, 0], 's', 'D')).toEqual([[0,0], 'O']);
   });
+  it("deberia ejecutar una instruccion 'a' con cualquier orientacion", () => {
+    expect(ejecutarComandos([0, 0], 'E', 'A')).toEqual([[1,0], 'E']);
+  });
 });
