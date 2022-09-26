@@ -1,4 +1,6 @@
-import {controladorDeAuto, validarCadena, devolverDimension, devolvePosicionInicial, devolverOrientacion, devolverInstrucciones} from "./controlador_auto.js";
+import {controladorDeAuto, validarCadena, devolverDimension, devolvePosicionInicial, 
+        devolverOrientacion, devolverInstrucciones, ejecutarComandos} 
+from "./controlador_auto.js";
 
 describe("CONTROLADOR DE AUTO", () => {
   it("deberia devolver 'ingresa una cadena'", () => {
@@ -66,5 +68,11 @@ describe("DEVOLVER INSTRUCCIONES", () => {
   });
   it("deberia devolver la instrucciones de cualquier cadena", () => {
     expect(devolverInstrucciones('100,17/0,0a/abcd')).toEqual('abcd');
+  });
+});
+
+describe("EJECUTAR COMANDOS", () => {
+  it("deberia ejecutar una instruccione 'i' con una orientacion hacia el norte", () => {
+      expect(ejecutarComandos('i')).toEqual('O');
   });
 });
