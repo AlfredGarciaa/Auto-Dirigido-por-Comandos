@@ -1,5 +1,16 @@
 const formato = /^(\d*)(\,)(\d*)(\/)(\d*)(\,)(\d*)([a-zA-Z])(\/)([a-zA-z]\D*)$/
 
+function validarCadena(cadena) {
+  
+  let arregloDeCoincidencia = devolverArregloDeCoincidencias(cadena);
+  if(arregloDeCoincidencia) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
 function controladorDeAuto(cadena) {
 
   let salida;
@@ -17,52 +28,6 @@ function controladorDeAuto(cadena) {
     salida = 'Ingrese una cadena.';
   }
   return salida;
-}
-
-function validarCadena(cadena) {
-  
-  let arregloDeCoincidencia = devolverArregloDeCoincidencias(cadena);
-  if(arregloDeCoincidencia) {
-    return true;
-  }
-  else {
-    return false;
-  }
-}
-
-function devolverDimension(cadena) {
-
-  let arregloDeCoincidencia = devolverArregloDeCoincidencias(cadena);
-  let x = parseInt(arregloDeCoincidencia[1]);
-  let y = parseInt(arregloDeCoincidencia[3]);
-  return [x, y];
-}
-
-function devolverArregloDeCoincidencias(cadena) {
-
-  return cadena.match(formato)
-}
-
-function devolvePosicionInicial(cadena) {
-
-  let arregloDeCoincidencia = devolverArregloDeCoincidencias(cadena);
-  let x = parseInt(arregloDeCoincidencia[5]);
-  let y = parseInt(arregloDeCoincidencia[7]);
-  return [x,y];
-}
-
-function devolverOrientacion(cadena) {
-
-  let arregloDeCoincidencia = devolverArregloDeCoincidencias(cadena, formato);
-  let orientacion = arregloDeCoincidencia[8];
-  return orientacion;
-}
-
-function devolverInstrucciones(cadena) {
-
-  let arregloDeCoincidencia = devolverArregloDeCoincidencias(cadena, formato);
-  let orientacion = arregloDeCoincidencia[10];
-  return orientacion;
 }
 
 function ejecutarComandos(posicion, orientacion, instruccion) {
@@ -89,4 +54,6 @@ function ejecutarComandos(posicion, orientacion, instruccion) {
   return [posicion, orientacion];
 }
 
-export {controladorDeAuto, validarCadena, devolverDimension, devolvePosicionInicial, devolverOrientacion, devolverInstrucciones, ejecutarComandos};
+import {devolverDimension, devolverArregloDeCoincidencias, devolvePosicionInicial,
+        devolverOrientacion, devolverInstrucciones} from './devolver_funciones.js';
+export {controladorDeAuto, validarCadena, ejecutarComandos};
