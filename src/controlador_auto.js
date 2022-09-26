@@ -65,17 +65,25 @@ function devolverInstrucciones(cadena) {
   return orientacion;
 }
 
-function ejecutarComandos(posicion, instruccion) {
+function ejecutarComandos(posicion, orientacion, instruccion) {
 
-  let orientacion = "";
-  if(instruccion == 'i') {
-    orientacion = 'O';
+  if(orientacion == 'n' || orientacion == 'N') {
+    if(instruccion == 'i') {
+      orientacion = 'O';
+    }
+    if(instruccion == 'd') {
+      orientacion = 'E';
+    }
+    if(instruccion == 'a') {
+      posicion[1] = posicion[1] + 1;
+    }
   }
-  if(instruccion == 'd') {
-    orientacion = 'E';
-  }
-  if(instruccion == 'a') {
-    posicion[1] = posicion[1] + 1;
+  else {
+    if(orientacion == 'o' || orientacion == 'O') {
+      if(instruccion == 'i' || instruccion == 'I') {
+        orientacion = 'S';
+      }
+    }
   }
   return [posicion, orientacion];
 }
