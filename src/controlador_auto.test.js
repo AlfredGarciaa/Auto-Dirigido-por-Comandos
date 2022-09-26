@@ -1,6 +1,7 @@
-import {controladorDeAuto, validarCadena, ejecutarComandos} from "./controlador_auto.js";
+import {validarCadena, controladorDeAuto} from "./controlador_auto.js";
 import {devolverDimension, devolverArregloDeCoincidencias, devolvePosicionInicial,
         devolverOrientacion, devolverInstrucciones} from "./devolver_funciones.js";
+import {ejecutarComandos} from "./movimiento_auto.js";
 
 describe("CONTROLADOR DE AUTO", () => {
   it("deberia devolver 'ingresa una cadena'", () => {
