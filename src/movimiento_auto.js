@@ -28,4 +28,4 @@ function ejecutarComandos(posicion, orientacion, instruccion) {
   return [posicion, orientacion];
 }
 
-export {ejecutarComandos};
+export { ejecutarComandos };

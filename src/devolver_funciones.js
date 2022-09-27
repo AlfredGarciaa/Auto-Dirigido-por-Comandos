@@ -35,5 +35,6 @@ function devolverInstrucciones(cadena) {
   return orientacion;
 }
 
-export {devolverDimension, devolverArregloDeCoincidencias, devolverPosicionInicial,
-        devolverOrientacion, devolverInstrucciones};
+export { devolverDimension, devolverArregloDeCoincidencias, devolverPosicionInicial,
+        devolverOrientacion, devolverInstrucciones };
+        
