@@ -1,5 +1,3 @@
-const formato = /^(\d*)(\,)(\d*)(\/)(\d*)(\,)(\d*)([a-zA-Z])(\/)([a-zA-z]\D*)$/
-
 function validarCadena(cadena) {
 
   let arregloDeCoincidencia = devolverArregloDeCoincidencias(cadena);
