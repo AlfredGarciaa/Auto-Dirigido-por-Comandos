@@ -1,12 +1,10 @@
+const formato = /^(\d*)(\,)(\d*)(\/)(\d*)(\,)(\d*)([a-zA-Z])(\/)([a-zA-z]\D*)$/
+
 function validarCadena(cadena) {
-  
+
   let arregloDeCoincidencia = devolverArregloDeCoincidencias(cadena);
-  if(arregloDeCoincidencia) {
-    return true;
-  }
-  else {
-    return false;
-  }
+  if(arregloDeCoincidencia) return true;
+  else return false;
 }
 
 function controladorDeAuto(cadena) {
@@ -15,19 +13,22 @@ function controladorDeAuto(cadena) {
   if (cadena) {
     let esValidoLaCadena = validarCadena(cadena);
     if(esValidoLaCadena) {
-      let posicion = devolverPosicionInicial(cadena)
+      let dimension = devolverDimension(cadena);
+      let posicion = devolverPosicionInicial(cadena);
       let orientacion = devolverOrientacion(cadena);
-      let instrucciones = devolverInstrucciones(cadena)
-      salida = 'Posicion inicial: ' + posicion + '\nComandos: ' + instrucciones + '\nPosicion final: ' + posicion + " " + orientacion;
-    }else {
-      salida = 'Error entrada.';
-    }
-  }else { 
-    salida = 'Ingrese una cadena.';
+      let instruccion = devolverInstrucciones(cadena)
+      let posicionFinal = ejecutarComandos(posicion, orientacion, instruccion)
+
+      if(posicionFinal[0] >= [0,0] && posicionFinal[0] <= dimension) {
+        salida = 'Posicion inicial: ' + posicion + '\nComandos: ' + instruccion + '\nPosicion final: ' + posicionFinal[0] + ' ' + posicionFinal[1];
+      }else salida = 'El auto se encuentra fuera del rango';
+    }else salida = 'Error entrada.';
   }
+  else salida = 'Ingrese una cadena.';
   return salida;
 }
 
-import {devolverArregloDeCoincidencias, devolverPosicionInicial,
+import {devolverDimension, devolverArregloDeCoincidencias, devolverPosicionInicial,
         devolverOrientacion, devolverInstrucciones} from './devolver_funciones.js';
+import {ejecutarComandos} from './movimiento_auto.js';
 export {controladorDeAuto, validarCadena};
