@@ -13,7 +13,7 @@ function devolverDimension(cadena) {
     return cadena.match(formato)
   }
   
-  function devolvePosicionInicial(cadena) {
+  function devolverPosicionInicial(cadena) {
   
     let arregloDeCoincidencia = devolverArregloDeCoincidencias(cadena);
     let x = parseInt(arregloDeCoincidencia[5]);
@@ -35,5 +35,5 @@ function devolverDimension(cadena) {
     return orientacion;
   }
 
-  export {devolverDimension, devolverArregloDeCoincidencias, devolvePosicionInicial,
+  export {devolverDimension, devolverArregloDeCoincidencias, devolverPosicionInicial,
           devolverOrientacion, devolverInstrucciones};

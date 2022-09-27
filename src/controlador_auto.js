@@ -15,7 +15,7 @@ function controladorDeAuto(cadena) {
   if (cadena) {
     let esValidoLaCadena = validarCadena(cadena);
     if(esValidoLaCadena) {
-      let posicion = devolvePosicionInicial(cadena)
+      let posicion = devolverPosicionInicial(cadena)
       let orientacion = devolverOrientacion(cadena);
       let instrucciones = devolverInstrucciones(cadena)
       salida = 'Posicion inicial: ' + posicion + '\nComandos: ' + instrucciones + '\nPosicion final: ' + posicion + " " + orientacion;
@@ -28,6 +28,6 @@ function controladorDeAuto(cadena) {
   return salida;
 }
 
-import {devolverDimension, devolverArregloDeCoincidencias, devolvePosicionInicial,
+import {devolverArregloDeCoincidencias, devolverPosicionInicial,
         devolverOrientacion, devolverInstrucciones} from './devolver_funciones.js';
 export {controladorDeAuto, validarCadena};
