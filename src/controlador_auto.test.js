@@ -1,7 +1,7 @@
 import { validarCadena, controladorDeAuto } from "./controlador_auto.js";
 import { devolverDimension, devolverPosicionInicial,
         devolverOrientacion, devolverInstrucciones } from "./devolver_funciones.js";
-import { ejecutarComandos } from "./movimiento_auto.js";
+import { ejecutarComandos, saltar } from "./movimiento_auto.js";
 
 describe("CONTROLADOR DE AUTO", () => {
     it("deberia devolver 'ingresa una cadena'", () => {
@@ -160,8 +160,10 @@ describe("EJECUTAR COMANDOS", () => {
     it("deberia ejecutar mas de una instruccion", () => {
         expect(ejecutarComandos([0, 0], 'E', 'Aaaa')).toEqual([[4,0], 'E']);
     });
+});
 
-    describe("!!! SEGUNDA PRUEBA !!!", () => {
-
+describe("!!! SEGUNDA PRUEBA !!!", () => {
+    it("devolver la posicion despues de ejecutar una instruccion 's'", () => {
+        expect(saltar('n', [0,0])).toEqual([0,2]);
     });
 });
