@@ -10,3 +10,5 @@ form.addEventListener("submit", (event) => {
   const respuesta = controladorDeAuto(comandos.value);
   div.innerHTML = "<p>" + respuesta[0] + "<br>" + respuesta[1] + "<br>" + respuesta[2] + "</p>";
 });
+
+//PRUEBA DE BOT :)
